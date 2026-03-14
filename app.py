@@ -5,8 +5,8 @@ import os
 
 # 1. Setup API Key (Use secrets in production!)
 # For local testing, replace "YOUR_API_KEY" with your actual key
-os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY_HERE"
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+api_key = os.getenv("GOOGLE_API_KEY") 
+genai.configure(api_key=api_key)
 
 # Initialize the model (using the 2.5-flash you found)
 model = genai.GenerativeModel('gemini-2.5-flash')
